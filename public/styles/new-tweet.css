@@ -1,0 +1,41 @@
+.new-tweet {
+  background-color: lightgrey;
+  border-radius: 5px;
+  border: solid grey 1px;
+  margin: 0 2em 0 2em;
+}
+
+h2 {
+  margin: 10px 10px 2px;
+
+}
+
+hr {
+  margin: 1px 15px 10px 15px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 5px 10px 15px 10px;
+}
+
+textarea {
+  width: 100%;
+  padding: 5px 5px 16px;
+  margin: 0 0 10px 0;
+
+}
+
+input {
+  background-color: white;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.counter {
+  margin: 10px 0px 10px 10px;
+  font-style: italic;
+  font-size: 0.8em;
+}
