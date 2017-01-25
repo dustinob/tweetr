@@ -11,11 +11,4 @@ $(function() {
   });
 });
 
-$(function() {
-  $("article").hover(function() {
-    $("footer div").fadeIn();
 
-}, function() {
-    $("footer .icons").fadeOut();
-});
-});
