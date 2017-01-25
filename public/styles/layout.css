@@ -27,10 +27,73 @@ main {
   background-color: white;
   color: black;
   padding: 8em 2em 4em 2em;
-
-
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+#tweets {
+  margin: 2em;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.profile-pic {
+  border-radius: 5px;
+  height: 50px;
+  width: 50px;
+}
+
+header {
+  padding: 5px 5px 5px 5px;
+  background-color: lightgrey;
+  flex-wrap: wrap;
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-between;
+
+}
+
+header div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 82%;
+}
+
+header .fullname {
+  font-size: 1.3em;
+  margin: 0;
+}
+
+header .tweetr-name {
+  font-size: .8em;
+  margin: 0;
+}
+
+footer {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+footer p {
+  display: inline-flex;
+  margin: 5px 5px 5px 5px;
+  font-size: 0.6em;
+}
+
+footer hr {
+  margin: 0px 5px 0px 5px;
+}
+
+article h3 {
+  padding: 5px;
+}
+
+.split {
+  display: inline-flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 5px;
+}

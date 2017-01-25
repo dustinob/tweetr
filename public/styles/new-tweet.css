@@ -10,7 +10,7 @@ h2 {
 
 }
 
-hr {
+.new-tweet hr {
   margin: 1px 15px 10px 15px;
 }
 
@@ -38,11 +38,4 @@ input {
   margin: 10px 0px 10px 10px;
   font-style: italic;
   font-size: 0.8em;
-}
-
-.counter-red {
-  margin: 10px 0px 10px 10px;
-  font-style: italic;
-  font-size: 0.8em;
-  color: red;
 }
