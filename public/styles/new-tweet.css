@@ -39,3 +39,10 @@ input {
   font-style: italic;
   font-size: 0.8em;
 }
+
+.counter-red {
+  margin: 10px 0px 10px 10px;
+  font-style: italic;
+  font-size: 0.8em;
+  color: red;
+}
