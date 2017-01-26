@@ -35,23 +35,40 @@ $(function() {
   function renderTweets(tweets) {
 
     for (var tweetObject of tweets) {
-      $(".all-tweets").append(createTweetElement(tweetObject));
+      $(".all-tweets").prepend(createTweetElement(tweetObject));
     }
   }
 
 
-  // $("article").hover(function() {
+
+
+  // $(".tweet").hover(function() {
+  //     console.log("In")
   //   $("footer div").fadeIn();
   // },
   // function() {
+  //   console.log("out")
   //   $("footer .icons").fadeOut();
   // });
 
+$("#compose").click(function() {
+  $(".new-tweet").slideToggle("slow", function() {
+    $("textarea").focus()
+  });
+});
 
 //block the form submission
 
   $("form").on("submit", function (event) {
     event.preventDefault();
+
+    var charCount = $(".new-tweet textarea").val().length;
+
+    if (charCount > 140 || charCount === 0) {
+      alert("Fuck off");
+      return;
+    }
+
 
     $.ajax({
       url: "/tweets" ,
