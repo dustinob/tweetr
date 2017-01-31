@@ -42,20 +42,20 @@ $(function() {
 
 
 
-  // $(".tweet").hover(function() {
-  //     console.log("In")
-  //   $("footer div").fadeIn();
-  // },
-  // function() {
-  //   console.log("out")
-  //   $("footer .icons").fadeOut();
-  // });
-
-$("#compose").click(function() {
-  $(".new-tweet").slideToggle("slow", function() {
-    $("textarea").focus()
+  $("article .tweet").hover(function() {
+      console.log("In");
+    $("div .icons").fadeIn();
+  },
+  function() {
+    console.log("out");
+    $("div .icons").fadeOut();
   });
-});
+
+  $("#compose").click(function() {
+    $(".new-tweet").slideToggle("slow", function() {
+      $("textarea").focus();
+    });
+  });
 
 //block the form submission
 
@@ -64,11 +64,14 @@ $("#compose").click(function() {
 
     var charCount = $(".new-tweet textarea").val().length;
 
-    if (charCount > 140 || charCount === 0) {
-      alert("Fuck off");
+    if (charCount > 140) {
+      alert("Please keep your post to 140 characters or less.");
       return;
     }
-
+    else if (charCount === 0) {
+      alert("Please enter some text.");
+      return;
+    }
 
     $.ajax({
       url: "/tweets" ,
