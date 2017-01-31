@@ -1,3 +1,5 @@
+"use strict";
+
 /*
  * Client-side JS logic goes here
  * jQuery is already loaded
@@ -10,18 +12,15 @@ $(function() {
   function createTweetElement(tweetData) {
 
     var $tweet = $("<article>").addClass("tweet");
-
     var $header = $("<header>").appendTo($tweet);
     var $avatar =  $("<img>").addClass("profile-pic").attr("src", tweetData.user.avatars.small).appendTo($header);
     var $div = $("<div>").appendTo($header);
     var $fullName = $("<p>").addClass("fullname").text(tweetData.user.name).appendTo($div);
     var $tweetrName = $("<p>").addClass("tweetr-name").text(tweetData.user.handle).appendTo($div);
     var $tweetText = $("<p>").addClass("tweet-text").text(tweetData.content.text).appendTo($tweet);
-
     var $footer = $("<footer>").appendTo($tweet);
     var $hr = $("<hr>").appendTo($footer);
     var $divSplit = $("<div>").addClass("split").appendTo($footer);
-
     var $date = $("<p>").text(tweetData.created_at).appendTo($divSplit);
     var $divIcons = $("<div>").addClass("icons").appendTo($divSplit);
     var $flagIcon = $("<i>").addClass("fa fa-flag").appendTo($divIcons);
@@ -29,7 +28,6 @@ $(function() {
     var $flagIcon = $("<i>").addClass("fa fa-heart").appendTo($divIcons);
 
     return $tweet;
-
   }
 
   function renderTweets(tweets) {
@@ -39,9 +37,7 @@ $(function() {
     }
   }
 
-
-
-
+  // Fadeing icons, worked at one point but not I can't get it working again. Let me know if you can help me after the review.
   $("article .tweet").hover(function() {
       console.log("In");
     $("div .icons").fadeIn();
@@ -57,7 +53,7 @@ $(function() {
     });
   });
 
-//block the form submission
+  //block the form submission
 
   $("form").on("submit", function (event) {
     event.preventDefault();
@@ -81,14 +77,9 @@ $(function() {
         loadTweets();
       }
     });
-
-
-
   });
 
   function loadTweets() {
-
-
     $.ajax({
           dataType: "JSON",
           url: '/tweets',
@@ -97,10 +88,9 @@ $(function() {
             renderTweets(tweets);
           }
     });
-
   }
 
-loadTweets();
+  loadTweets();
 
 });
 
